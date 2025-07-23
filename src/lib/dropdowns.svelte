@@ -1,8 +1,9 @@
 <script lang="ts">
   import { slide } from "svelte/transition";
-  import { onMount, onDestroy } from "svelte";
+  import { onMount } from "svelte";
 
-  const { label, items, renderLinks = true } = $props<{
+  const { dropdownId, label, items, renderLinks = true } = $props<{
+    dropdownId?: Array<string>;
     label: Array<string>;
     items: Array<string | { text: string; href: string }>;
     renderLinks?: boolean;
@@ -114,7 +115,7 @@
     padding: 0.5rem;
     display: flex;
     align-items: center;
-    cursor: default;
+    cursor: pointer;
     font-size: inherit;
     font-family: inherit;
     flex-wrap: nowrap;
@@ -129,7 +130,7 @@
     padding: 0.5rem;
     z-index: 1000;
     min-width: 220px;
-    font-size: 90%;
+    font-size: 85%;
     display: flex;
     flex-direction: column;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));

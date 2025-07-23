@@ -13,9 +13,11 @@
         "henkilökunta",
         "yhteystiedot",
         "artikkelit",
+        "ajanvaraus"
     ];
 
     const palvelut = [
+        "Yleistä tietoa",
         "Ruoka- ja tarvikemyynti",
         "Akuutti sairastuminen",
         "Anestesia",
@@ -153,6 +155,10 @@
         
     }
     .headeritem{
-        font-size: 50%;
+        font-size: 58%;
+    }
+    .page-content{
+        display: flex;
+        font-size: 150%;
     }
 </style>
