@@ -125,6 +125,7 @@
   .dropdown-content {
     position: absolute;
     top: 100%;
+    right: -20%;
     background: rgba(210, 210, 210, 0.95);
     border-radius: 0 0 20px 20px;
     padding: 0.5rem;

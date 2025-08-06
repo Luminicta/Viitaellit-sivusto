@@ -60,14 +60,14 @@
                         <a href={`/`} class="nav-link">{nappi}</a>
                     </div>
                         
-                    {:else if nappi == "palvelut"}
+                    <!--{:else if nappi == "palvelut"}
                     <div class="headeritem">
                         <Dropdowns
                             label={["Palvelut"]}
                             items={palvelut}
                             renderLinks={true}
                         />
-                    </div>
+                    </div>-->
                         
                     {:else}
                     <div class="headeritem">
@@ -98,7 +98,7 @@
 {/if}
 
 <footer>
-
+  
 </footer>
 
 <style>

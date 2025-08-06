@@ -1,3 +1,25 @@
+<script lang="ts">
+    import Dropdowns from "$lib/dropdowns.svelte";
+    const palvelut = [
+        "Anestesia",
+        "Geenitestit",
+        "Hammas- ja suuhoito",
+        "Ihosairaudet ja allergiat",
+        "Kirurgia",
+        "Laboratoriotutkimukset",
+        "Loishoidot",
+        "Rokotukset",
+        "Röntgentutkimukset",
+        "Silmäsairaudet",
+        "Sisätaudit",
+        "Synnytys",
+        "Tähystystutkimukset",
+        "Ultraäänitutkimukset",
+        "Viralliset tutkimukset",
+    ];
+</script>
+
+
 <div class="fullpage">
     <div class="welcome">
         <h1>Toivotamme lämpimästi tervetulleeksi</h1>
@@ -16,13 +38,6 @@
         <p>
             Tarjoamme eläinlääkintäpalveluita pieneläimille, johon sisältyy kaikki perushoidot ja suuhoidot, joiden lisäksi tarjoamme myös silmätutkimuksia ja -hoitoja.
         </p>
-        <!--<p>
-            Eläinlääkintäpalvelumme kohdistuvat pieneläimiin, joita hoidamme ajanmukaisilla välineillä, joita käyttävät hyvin koulutettu henkilökuntamme. Päivitämme osaamistamme useita kertoja vuodessa jatkokoulutusten kautta. (I really want to add a <3 here ;-;)
-        </p>
-        <p>
-            Mikäili meillä ei ole tarvittavaa erikoisvälineistöä tai osaamista tarvittavaan hoitoon, ohjaamme teidät oikeaan paikkaan turvataksemme, että lemmikkinne saa tarvittavan hoidon.
-        </p> -->
-
         </div>
         <div class="service-intro">
             <div class="services-texts">
@@ -33,7 +48,17 @@
             </div>
             
         </div>
-       
+       <div class="services-buttons">
+            {#each palvelut as palvelu}
+               <div class="service-button">
+                <Dropdowns
+                label={[palvelu]}
+                items={["text"]}
+                renderLinks={false}></Dropdowns>
+               </div> 
+            
+            {/each}
+       </div>
     </div>
 </div>
 
@@ -57,6 +82,8 @@
         display: flex;
         font-size: 85%;
         flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
     .service-intro{
         display: flex;
@@ -73,5 +100,26 @@
         flex-direction: column;
         max-width: 50%;
     }
-
+    .services-buttons{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex: 1;
+        align-items: center;
+        max-width: 80%;
+        gap: 3%;
+    }
+    .service-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px 30px;
+        margin-bottom: 2%;
+        background-color: rgb(205, 255, 205);
+        flex: 1;
+        min-width: 10%;
+        max-width: 15%;
+    }
 </style>

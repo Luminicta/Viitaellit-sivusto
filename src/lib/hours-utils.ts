@@ -7,9 +7,7 @@ const fullWeek = ["ma", "ti", "ke", "to", "pe", "la", "su"];
 
 //Tähän voi määrätä aukiolopäivät ja niiden ajat
 const input: AukioloAjat[] = [
-  { paivat: ["ma", "ti", "ke", "pe"], aika: { aukeaa: "8", sulkeutuu: "16" } },
-  { paivat: ["to"], aika: { aukeaa: 10, sulkeutuu: 14 } },
-  { paivat: ["la", "su"], aika: {} },
+  { paivat: ["ma", "ti", "ke", "to", "pe"], aika: { aukeaa: "8", sulkeutuu: "16" } }
 ];
 
 //Näyttää ajan xx:xx muodossa, vaikka aika olisi annettuna normaalina kokonaislukuna
