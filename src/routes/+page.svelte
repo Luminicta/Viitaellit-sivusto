@@ -53,8 +53,8 @@
                <div class="service-button">
                 <Dropdowns
                 label={[palvelu]}
-                items={["text"]}
-                renderLinks={false}></Dropdowns>
+                items={["Tähän voi kirjoittaa lyhyen kuvauksen palvelusta ja lisätä linkin sen omalle sivulle"]}
+                description={true}></Dropdowns>
                </div> 
             
             {/each}
@@ -109,6 +109,7 @@
         align-items: center;
         max-width: 80%;
         gap: 3%;
+        white-space: wrap;
     }
     .service-button{
         display: flex;
@@ -118,8 +119,10 @@
         padding: 20px 30px;
         margin-bottom: 2%;
         background-color: rgb(205, 255, 205);
+        min-width: fit-content;
+        
         flex: 1;
-        min-width: 10%;
-        max-width: 15%;
+        white-space: wrap;
+        
     }
 </style>

@@ -97,8 +97,10 @@
     <div>Jotain meni pieleen</div>
 {/if}
 
-<footer>
-  
+<footer class="footer">
+  <div>
+    Tänne voi laittaa mm. kartan, tietosuojaselosteita, yms.
+  </div>
 </footer>
 
 <style>
@@ -115,6 +117,15 @@
         font-size: 35px;
         flex-wrap: wrap;
     }
+    
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 150px;
+      font-size: 150%;
+    }
+
     .nav {
         display: flex;
         align-items: center;

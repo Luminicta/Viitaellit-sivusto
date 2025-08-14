@@ -2,20 +2,20 @@
   import { slide } from "svelte/transition";
   import { onMount } from "svelte";
 
-  const { dropdownId, label, items, renderLinks = true } = $props<{
+  const { dropdownId, label, items, renderLinks = true , description = false } = $props<{
     dropdownId?: Array<string>;
     label: Array<string>;
     items: Array<string | { text: string; href: string }>;
     renderLinks?: boolean;
+    description?: boolean;
   }>();
-
   let isOpen = $state(false);
   let clickedToggle = $state(false);
+  
   let wrapper: HTMLDivElement;
 
   function open() {
     isOpen = true;
-    
   }
 
   function close() {
@@ -68,12 +68,14 @@
   onmouseleave={handleMouseLeave}
   onkeydown={handleKeydown}
   aria-hidden="true"
+  
 >
   <button
     class="dropdown-button"
     aria-haspopup="true"
     aria-expanded={isOpen}
     onclick={handleClick}
+    
   >
     {label}
     <img
@@ -84,7 +86,12 @@
   </button>
 
   {#if isOpen}
-    <div class="dropdown-content" transition:slide={{ duration: 300 }} role="menu">
+    {#if description == true}
+    <div class="dropdown-description-content" >
+      <div class="dropdown-description-text">{items}</div>
+    </div>
+    {:else}
+    <div class="dropdown-content" role="menu">
       {#each items as item}
         {#if typeof item === 'string'}
           {#if renderLinks}
@@ -99,6 +106,8 @@
         {/if}
       {/each}
     </div>
+    {/if}
+    
   {/if}
 </div>
 
@@ -120,12 +129,15 @@
     font-family: inherit;
     flex-wrap: nowrap;
     white-space: nowrap;
+    width: inherit;
+    height: inherit;
   }
 
   .dropdown-content {
     position: absolute;
     top: 100%;
-    right: -20%;
+    left: 50%;
+    transform: translateX(-50%);
     background: rgba(210, 210, 210, 0.95);
     border-radius: 0 0 20px 20px;
     padding: 0.5rem;
@@ -136,6 +148,22 @@
     flex-direction: column;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 0.25rem;
+    overflow-y: auto;
+  }
+
+  .dropdown-description-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(229, 255, 229);
+    min-width: 50vh;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    height: inherit;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .dropdown-item {

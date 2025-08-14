@@ -2,7 +2,7 @@
 	"name": "viitaellit-sivusto",
 	"private": true,
 	"version": "0.0.1",
-	"homepage": "https://{Luminicta}.github.io/{Viitaellit-sivusto}",
+	"homepage": "https://luminicta.github.io/Viitaellit-sivusto",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",

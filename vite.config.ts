@@ -3,5 +3,5 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [sveltekit()],
-	base:"/{Viitaellit-sivusto}/"
+	base:"/Viitaellit-sivusto/"
 });
